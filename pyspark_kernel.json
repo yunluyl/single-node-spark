@@ -1,0 +1,5 @@
+{
+  "display_name": "PySpark",
+  "language": "python",
+  "argv": [ "/home/jupyter/miniconda3/envs/pyspark/bin/python", "-m", "ipykernel", "-f", "{connection_file}" ]
+}
