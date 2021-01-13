@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-ARG SPARK_VERSION="spark-2.4.6-bin-hadoop2.7"
+ARG SPARK_VERSION="spark-2.4.7-bin-hadoop2.7"
 
 RUN groupadd --gid 1001 jupyter
 RUN useradd --create-home --uid 1000 --gid 1001 jupyter
@@ -17,7 +17,7 @@ ENV PATH="${JAVA_HOME}/bin:${PATH}"
 COPY ./run_jupyter.sh ./run_jupyter.sh
 RUN chmod +x ./run_jupyter.sh
 USER jupyter
-RUN wget -nv "https://apache.osuosl.org/spark/spark-2.4.6/${SPARK_VERSION}.tgz" && \
+RUN wget -nv "https://apache.osuosl.org/spark/spark-2.4.7/${SPARK_VERSION}.tgz" && \
     mkdir spark && \
     tar -zxvf "${SPARK_VERSION}.tgz" -C spark/ && \
     rm -f "./${SPARK_VERSION}.tgz"
